@@ -76,6 +76,13 @@ const destroy=(req, res) => {
 };
 
 
+const viaggiController = {
+  index,
+  show,
+  store,
+  update,
+  destroy,
+};
 
 
 export default viaggiController;
