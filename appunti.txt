@@ -1,0 +1,10 @@
+app.js 
+    è il file che inizializza il tuo progetto
+
+routes
+    servono per definire la lista delle rotte
+
+controllers
+    servono per esprimere la logica
+    le funzioni definite saranno utilizzate dentro le routes
+    interagiscono con la base dati (in questo SPECIFICO caso è un array)
