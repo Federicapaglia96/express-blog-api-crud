@@ -1,7 +1,7 @@
 // importo express
 import express from "express";
 // importo router
-import viaggiRoutes from "./router/viaggi.js";
+import torteRoutes from "./router/torte.js";
 
 
 //invoco express
@@ -11,11 +11,12 @@ const port=3000;
 
 //rendo pubbliche le immagini
 app.use(express.static("public"));
+app.use(express.json());// quando arriva la richiesta prende il body
 
 //definisco la prima rotta
 app.get('/', (req,res)=>{
     const resData={
-        data:"viaggi in natura",
+        data:"torte",
     };
 
     res.json(resData);
@@ -23,8 +24,8 @@ app.get('/', (req,res)=>{
 });
 
 
-// utilizzare viaggiRoutes
-app.use('/viaggi', viaggiRoutes);
+// utilizzare torteRoutes
+app.use('/torte', torteRoutes);
 //avvio il server mettendolo in ascolto sulla porta indicata
  app.listen(port,()=>{
 console.log("sono il server");
