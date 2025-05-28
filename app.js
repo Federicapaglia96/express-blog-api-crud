@@ -2,7 +2,8 @@
 import express from "express";
 // importo router
 import torteRoutes from "./router/torte.js";
-
+//importo middleware
+import routeNotFound from "./middleware/routeNotFound.js";
 
 //invoco express
 const app=express();
@@ -26,6 +27,9 @@ app.get('/', (req,res)=>{
 
 // utilizzare torteRoutes
 app.use('/torte', torteRoutes);
+
+//registro middleware alla fine di tutte le rotte
+app.use(routeNotFound);
 //avvio il server mettendolo in ascolto sulla porta indicata
  app.listen(port,()=>{
 console.log("sono il server");

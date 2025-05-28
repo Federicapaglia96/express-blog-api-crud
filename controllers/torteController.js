@@ -106,7 +106,7 @@ const show = (req, res) => {
 
 //STORE
 //creazione
-
+//aggiungo una nuova torta
 const store = (req, res) => {
     const nuovaTorta = req.body;
     const lastId=parseInt(torte[torte.length-1].id);
