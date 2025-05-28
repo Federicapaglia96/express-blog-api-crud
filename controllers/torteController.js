@@ -108,8 +108,11 @@ const show = (req, res) => {
 //creazione
 
 const store = (req, res) => {
-    const nuovaTorta= req.body;
-    const lastId=parseInt()
+    const nuovaTorta = req.body;
+    const lastId=parseInt(torte[torte.length-1].id);
+    nuovaTorta.id=(lastId+1).toString();
+    torte.push(nuovaTorta)
+
 
     res.json({
         data: "Aggiungo una nuova torta",
@@ -119,12 +122,12 @@ const store = (req, res) => {
 //update modifica
 
 const update = (req, res) => {
-    const torteId=req.params.id;
-    const updateData=req.body;
-    const torte=
-    res.json({
-        data: torte
-    });
+    const torteId = req.params.id;
+    const updateData = req.body;
+    const torte =
+        res.json({
+            data: torte
+        });
 };
 
 
